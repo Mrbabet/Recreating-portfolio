@@ -6,55 +6,63 @@ import gsap from "gsap";
 
 MouseFollower.registerGSAP(gsap);
 
-const cursor = new MouseFollower({
-  el: null,
-  container: document.body,
-  className: "mf-cursor",
-  innerClassName: "mf-cursor-inner",
-  textClassName: "mf-cursor-text",
-  mediaClassName: "mf-cursor-media",
-  mediaBoxClassName: "mf-cursor-media-box",
-  iconSvgClassName: "mf-svgsprite",
-  iconSvgNamePrefix: "-",
-  iconSvgSrc: "",
-  dataAttr: "cursor",
-  hiddenState: "-hidden",
-  textState: "-text",
-  iconState: "-icon",
-  activeState: "-active",
-  mediaState: "-media",
-  stateDetection: {
-    "-pointer": "a,button",
-    "-hidden": "iframe",
-  },
-  visible: false,
-  visibleOnState: false,
-  speed: 0.3,
-  ease: "expo.out",
-  overwrite: true,
-  skewing: 0,
-  skewingText: 0,
-  skewingIcon: 0,
-  skewingMedia: 0,
-  skewingDelta: 0,
-  skewingDeltaMax: 0,
-  stickDelta: 0,
-  showTimeout: 0,
-  hideOnLeave: true,
-  hideTimeout: 0,
-  hideMediaTimeout: 0,
-});
+function isMobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+}
 
-const el = document.querySelector(".carousel");
-el.addEventListener("mouseenter", () => {
-  cursor.show();
-  cursor.setImg(showreal);
-});
+if (!isMobile()) {
+  const cursor = new MouseFollower({
+    el: null,
+    container: document.body,
+    className: "mf-cursor",
+    innerClassName: "mf-cursor-inner",
+    textClassName: "mf-cursor-text",
+    mediaClassName: "mf-cursor-media",
+    mediaBoxClassName: "mf-cursor-media-box",
+    iconSvgClassName: "mf-svgsprite",
+    iconSvgNamePrefix: "-",
+    iconSvgSrc: "",
+    dataAttr: "cursor",
+    hiddenState: "-hidden",
+    textState: "-text",
+    iconState: "-icon",
+    activeState: "-active",
+    mediaState: "-media",
+    stateDetection: {
+      "-pointer": "a,button",
+      "-hidden": "iframe",
+    },
+    visible: false,
+    visibleOnState: false,
+    speed: 0.3,
+    ease: "expo.out",
+    overwrite: true,
+    skewing: 0,
+    skewingText: 0,
+    skewingIcon: 0,
+    skewingMedia: 0,
+    skewingDelta: 0,
+    skewingDeltaMax: 0,
+    stickDelta: 0,
+    showTimeout: 0,
+    hideOnLeave: true,
+    hideTimeout: 0,
+    hideMediaTimeout: 0,
+  });
 
-el.addEventListener("mouseleave", () => {
-  cursor.hide();
-  cursor.removeImg();
-});
+  const el = document.querySelector(".carousel");
+  el.addEventListener("mouseenter", () => {
+    cursor.show();
+    cursor.setImg(showreal);
+  });
+
+  el.addEventListener("mouseleave", () => {
+    cursor.hide();
+    cursor.removeImg();
+  });
+}
 
 let carouselSlider = document.querySelector(".carousel-slider");
 let list = document.querySelector(".carousel-list");
@@ -81,16 +89,16 @@ carouselSlider.style.width = carouselSliderWidth + "px";
 if (screen.width <= 1760) {
   carouselSliderWidth = itemsWidthSum + 240;
 } else {
-  carouselSliderWidth = itemsWidthSum * 1.2;
+  carouselSliderWidth = itemsWidthSum * 1.7;
 }
-console.log(carouselSliderWidth);
+
 carouselSlider.style.width = carouselSliderWidth + "px";
 function carousel() {
   item.forEach((item, index) => {
     item.style.transform = `translateX(${index * 60}px)`;
   });
 
-  const speed = 3;
+  const speed = 1;
 
   const width = carouselSliderWidth;
   let x = 0;
@@ -127,4 +135,24 @@ function carousel() {
   let a = setInterval(moveFirst, 10);
   let b = setInterval(moveSecond, 10);
 }
+
 carousel();
+
+const showrealImgContainer = document.querySelector(".showreal-img");
+const carouselContainer = document.querySelector(".carousel");
+const carouselItem = document.querySelector(".carousel-item");
+
+const centerCarousel = function () {
+  const showrealContainerHeight = showrealImgContainer.offsetHeight;
+  const carouselItemHeight = carouselItem.offsetHeight;
+  return (carouselContainer.style.top =
+    showrealContainerHeight * 0.5 - carouselItemHeight * 0.5 + "px");
+};
+
+window.onload = function () {
+  centerCarousel();
+};
+
+window.onresize = function () {
+  centerCarousel();
+};
