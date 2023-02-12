@@ -1,0 +1,25 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 20px;
+  margin-bottom: 20px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+.flex-row {
+  display: flex;
+  justify-content: center;
+}
+.portfolio-link {
+  background-color: black;
+  border: 1px solid white;
+  padding: 8px 16px;
+  border-radius: 99vh;
+  text-decoration: none;
+  z-index: 100;
+  text-decoration: mone;
+  color: white;
+}

@@ -1,0 +1,25 @@
+.content {
+  font-family: "DM Sans", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.navigation-top {
+  .nav-left-side {
+    display: flex;
+    flex-direction: column;
+    a {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .nav-right-side {
+    display: flex;
+    gap: 16px;
+  }
+}

@@ -12,7 +12,7 @@ function isMobile() {
   );
 }
 
-if (!isMobile()) {
+if (!isMobile() || screen.width <= 1200) {
   const cursor = new MouseFollower({
     el: null,
     container: document.body,
