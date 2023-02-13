@@ -11,6 +11,15 @@ const generateContainers = function (place, className, tagName) {
   place.appendChild(generateDiv);
 };
 // ----------------------------------------------------------------------------------------
+
+const { host, hostname, href, origin, pathname, port, protocol, search } =
+  window.location;
+
+let logo;
+let breadcrumbs;
+let infoBtn;
+let previousBtn;
+
 const generateHeader = function () {
   generateContainers(contentSection, "navigation-top", "div");
 
@@ -23,7 +32,7 @@ const generateHeader = function () {
 
   generateContainers(navigationLeft, "name", "a");
 
-  const logo = document.querySelector(".name");
+  logo = document.querySelector(".name");
   logo.innerHTML = "Abigail Frączek";
   logo.href = "index.html";
 
@@ -35,13 +44,13 @@ const generateHeader = function () {
   breadcrumbArrowImg.src = breadcrumbImg;
 
   generateContainers(navigationLeft, "breadcrumbs", "a");
-  const breadcrumbs = document.querySelector(".breadcrumbs");
-  breadcrumbs.innerHTML = `Portfolio`; // Need to add name depending on the Url of page;
+  breadcrumbs = document.querySelector(".breadcrumbs");
+  breadcrumbs.innerHTML = pathname; // Need to add name depending on the Url of page;
   breadcrumbs.href = "";
   const navigationRight = document.querySelector(".nav-right-side");
   generateContainers(navigationRight, "previous-btn", "a");
 
-  const previousBtn = document.querySelector(".previous-btn");
+  previousBtn = document.querySelector(".previous-btn");
 
   generateContainers(previousBtn, "previous-arrow-img", "img");
 
@@ -50,8 +59,9 @@ const generateHeader = function () {
 
   generateContainers(navigationRight, "info-btn", "a");
 
-  const infoBtn = document.querySelector(".info-btn");
+  infoBtn = document.querySelector(".info-btn");
   infoBtn.innerHTML = "Info";
+  infoBtn.href = "/info.html";
 };
 generateHeader();
 // ----------------------------------------------------------------------------------------
@@ -74,6 +84,27 @@ const generateFooter = function () {
   email.innerHTML = "abigailfraczek.kontakt@gmail.com";
   email.href = "#";
   instagram.innerHTML = "Instagram";
-  instagram.href = "#";
+  instagram.href = "https://www.instagram.com/abigailfraczek/";
 };
 generateFooter();
+
+console.log(breadcrumbs);
+
+if (window.location.toString().includes(pathname) === true) {
+  logo.style.fontWeight = "400";
+  breadcrumbs.style.fontWeight = "700";
+}
+
+if (window.location.toString().includes("realizacja") === true) {
+  previousBtn.style.display = "flex";
+} else {
+  previousBtn.style.display = "none";
+}
+
+if (window.location.toString().includes("info") === true) {
+  infoBtn.innerHTML = "Portfolio";
+  infoBtn.style.width = 89 + "px";
+  infoBtn.className = "portfolio-btn";
+  const portfolioBtn = document.querySelector(".portfolio-btn");
+  portfolioBtn.href = "/index.html";
+}

@@ -25,7 +25,8 @@
     justify-content: center;
     align-items: center;
   }
-  .info-btn {
+  .info-btn,
+  .portfolio-btn {
     width: 58px;
     height: 42px;
     background-color: transparent;
@@ -34,6 +35,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    color: black;
   }
 }
 .breadcrumbs {
