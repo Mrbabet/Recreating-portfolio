@@ -3,6 +3,7 @@
   margin-inline: 20px;
   display: flex;
   justify-content: space-between;
+  font-size: 15px;
 
   .name {
     font-family: "Lora", serif;
@@ -10,6 +11,7 @@
     a {
       text-decoration: none;
       color: black;
+      cursor: pointer;
     }
   }
   .right-side {
