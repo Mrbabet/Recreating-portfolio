@@ -28,7 +28,8 @@
     align-items: center;
   }
   .info-btn,
-  .portfolio-btn {
+  .portfolio-btn,
+  .go-back-btn {
     width: 58px;
     height: 42px;
     background-color: transparent;
@@ -39,6 +40,7 @@
     align-items: center;
     text-decoration: none;
     color: black;
+    cursor: pointer;
   }
 }
 .breadcrumbs {

@@ -13,7 +13,7 @@ export default class PageFooter extends HTMLElement {
 
   render() {
     this.innerHTML = `<footer class="footer">
-      <a href="#">abigailfraczek.kontakt@gmail.com</a>
+      <span>abigailfraczek.kontakt@gmail.com</span>
       <a href="https://www.instagram.com/abigailfraczek/">Instagram</a>
     </footer>`;
   }
