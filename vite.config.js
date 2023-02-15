@@ -1,16 +1,21 @@
-import path from "path";
+import { resolve } from "path";
+import { defineConfig } from "vite";
 
-export default {
-  root: path.resolve(__dirname, ""),
+const root = resolve(__dirname, "");
+const outDir = resolve(__dirname, "dist");
+
+export default defineConfig({
+  root,
   build: {
-    outDir: path.resolve(__dirname, "dist"),
+    outDir,
+    emptyOutDir: true,
     rollupOptions: {
       input: {
-        index: path.resolve(__dirname, "index.html"),
-        portfolio: path.resolve(__dirname, "portfolio.html"),
-        realizacja: path.resolve(__dirname, "realizacja.html"),
-        info: path.resolve(__dirname, "info.html"),
+        main: resolve(root, "index.html"),
+        info: resolve(root, "info.html"),
+        portfolio: resolve(root, "portfolio.html"),
+        realizacja: resolve(root, "realizacja.html"),
       },
     },
   },
-};
+});

@@ -1,4 +1,21 @@
 .navigation-top {
+  .nav-left-side {
+    display: flex;
+    flex-direction: column;
+    a {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .nav-right-side {
+    display: flex;
+    gap: 16px;
+  }
+}
+.navigation-top {
   margin-top: 20px;
   margin-inline: 20px;
   display: flex;

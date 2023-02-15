@@ -1,7 +1,5 @@
 import "./scss/styles.scss";
-
 import showreal from "./src/images/Showreal.svg";
-
 import MouseFollower from "mouse-follower";
 import gsap from "gsap";
 
@@ -13,7 +11,7 @@ function isMobile() {
   );
 }
 
-if (!isMobile() || screen.width <= 1200) {
+if (!isMobile() || screen.width >= 1200) {
   const cursor = new MouseFollower({
     el: null,
     container: document.body,
