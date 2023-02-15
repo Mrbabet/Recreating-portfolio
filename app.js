@@ -21,6 +21,8 @@ const breadcrumb = document.querySelector(".breadcrumbs");
 const previousBtn = document.querySelector(".previous-btn");
 const previousArrowImg = document.querySelector(".previous-arrow-img");
 const infoBtn = document.querySelector(".info-btn");
+let goBackBtn = document.querySelector(".go-back-btn");
+goBackBtn.style.display = "none";
 
 infoBtn.href = "./info.html";
 arrowImg.src = breadcrumbImg;
@@ -33,9 +35,13 @@ if (window.location.toString().includes(pathname) === true) {
 if (window.location.toString().includes("info")) {
   breadcrumb.innerHTML = breadcrumbs.info;
   previousBtn.style.display = "none";
-  infoBtn.innerHTML = "Portfolio";
-  infoBtn.style.width = 89 + "px";
-  infoBtn.href = "./index.html";
+  infoBtn.style.display = "none";
+  goBackBtn.innerHTML = "Go back";
+  goBackBtn.style.width = 89 + "px";
+  goBackBtn.style.display = "flex";
+  goBackBtn.addEventListener("click", function () {
+    window.history.back();
+  });
 } else if (window.location.toString().includes("portfolio")) {
   breadcrumb.innerHTML = breadcrumbs.portfolio;
   previousBtn.style.display = "none";
