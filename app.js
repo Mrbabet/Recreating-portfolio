@@ -15,11 +15,16 @@ let breadcrumbs = {
   portfolio: "Portfolio",
   realizacja: "Portfolio",
 };
-
+const arrowImg = document.querySelector(".arrow-img");
 const logo = document.querySelector(".name");
 const breadcrumb = document.querySelector(".breadcrumbs");
 const previousBtn = document.querySelector(".previous-btn");
+const previousArrowImg = document.querySelector(".previous-arrow-img");
 const infoBtn = document.querySelector(".info-btn");
+
+infoBtn.href = "./info.html";
+arrowImg.src = breadcrumbImg;
+previousArrowImg.src = previousBtnArrowImg;
 
 if (window.location.toString().includes(pathname) === true) {
   logo.style.fontWeight = "400";

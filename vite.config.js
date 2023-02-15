@@ -9,6 +9,7 @@ export default {
         index: path.resolve(__dirname, "index.html"),
         portfolio: path.resolve(__dirname, "portfolio.html"),
         realizacja: path.resolve(__dirname, "realizacja.html"),
+        info: path.resolve(__dirname, "info.html"),
       },
     },
   },
