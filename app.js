@@ -1,8 +1,6 @@
 import "./scss/styles.scss";
 import breadcrumbImg from "./src/images/breadcrumb-arrow.svg";
 import previousBtnArrowImg from "./src/images/previous-btn.svg";
-import ImgGray from "./src/images/Szary-img.jpg";
-import ImgGraySmall from "./src/images/Szary-img-small.jpg";
 import { newComponents } from "./components";
 import PageHeader from "./components/Header";
 import PageFooter from "./components/Footer";
