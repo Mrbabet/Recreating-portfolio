@@ -63,6 +63,7 @@ const newComponents = [
     title: "Tytuł",
     description: "Opis.",
     type: "picture",
+    link: "realizacja.html",
   },
   {
     id: 1,
@@ -70,6 +71,7 @@ const newComponents = [
     title: "Tytuł",
     description: "Opis.",
     type: "picture",
+    link: "realizacja.html",
   },
   {
     id: 2,
@@ -77,6 +79,7 @@ const newComponents = [
     title: "Tytuł",
     description: "Opis.",
     type: "portrait",
+    link: "realizacja.html",
     description1:
       "Logo jest wizualną <br/>reprezentacją <br/> Ciebie i Twojego <br/>biznesu.",
     description2:
@@ -88,6 +91,7 @@ const newComponents = [
     title: "Tytuł",
     description: "Opis.",
     type: "picture",
+    link: "realizacja.html",
   },
   {
     id: 4,
@@ -95,6 +99,7 @@ const newComponents = [
     title: "Tytuł",
     description: "Opis.",
     type: "picture",
+    link: "realizacja.html",
   },
   {
     id: 5,
@@ -102,6 +107,7 @@ const newComponents = [
     title: "Tytuł",
     description: "Opis.",
     type: "picture",
+    link: "realizacja.html",
     description1:
       "Identyfikacja<br/> wizualna  przyciąga <br/>sprecyzowaną<br/> grupę klientów,<br/> którzy zapłacą<br/> za Twoje produkty.",
     description2:
@@ -113,6 +119,7 @@ const newComponents = [
     title: "Tytuł",
     description: "Opis.",
     type: "picture",
+    link: "realizacja.html",
   },
   {
     id: 7,
@@ -120,6 +127,7 @@ const newComponents = [
     title: "Tytuł",
     description: "Opis.",
     type: "portrait",
+    link: "realizacja.html",
   },
   {
     id: 8,
@@ -127,6 +135,7 @@ const newComponents = [
     title: "Tytuł",
     description: "Opis.",
     type: "picture",
+    link: "realizacja.html",
     description1:
       "Marka dzieląca się<br/> doświadczeniami na mediach społecznościowych zbliża do siebie swoich<br/> klientów.",
     description2:
@@ -138,6 +147,7 @@ const newComponents = [
     title: "Tytuł",
     description: "Opis.",
     type: "picture",
+    link: "realizacja.html",
   },
   {
     id: 10,
@@ -145,6 +155,7 @@ const newComponents = [
     title: "Tytuł",
     description: "Opis.",
     type: "portrait",
+    link: "realizacja.html",
   },
   {
     id: 11,
@@ -152,6 +163,7 @@ const newComponents = [
     title: "Tytuł",
     description: "Opis.",
     type: "picture",
+    link: "realizacja.html",
   },
 ];
 
@@ -169,8 +181,9 @@ const renderContainers = function (items) {
 
     //Generatimg the div element by the appendChild method
 
-    const createBoxContainer = document.createElement("div");
+    const createBoxContainer = document.createElement("a");
     createBoxContainer.className = "box-container";
+    createBoxContainer.href = items[i].link;
     createBoxContainer.innerHTML = `<div class ='description-container'><div class="title">${items[i].title}</div>
                                     <p class="img-description">${items[i].description}</p></div>`;
     createBoxContainer.setAttribute("data-type", items[i].type);

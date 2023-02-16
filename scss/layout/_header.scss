@@ -2,6 +2,10 @@
   .nav-left-side {
     display: flex;
     flex-direction: column;
+    @media screen and (min-width: 820px) {
+      flex-direction: row;
+      gap: 26px;
+    }
     a {
       display: flex;
       gap: 14px;

@@ -22,7 +22,7 @@ export default class PageHeader extends HTMLElement {
       <a class="breadcrumbs"></a>
     </div>
     <div class="nav-right-side">
-      <a class="previous-btn" 
+      <a class="previous-btn" href ="portfolio.html"
         ><img
           class="previous-arrow-img"
           src="/src/images/previous-btn.svg" /></a
