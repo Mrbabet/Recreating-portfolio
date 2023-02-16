@@ -27,9 +27,8 @@ export default class PageHeader extends HTMLElement {
           class="previous-arrow-img"
           src="/src/images/previous-btn.svg" /></a
       ><a class="info-btn" href="">Info</a>
-      <button class="go-back-btn"><img
-      class="previous-arrow-img"
-      src="/src/images/previous-btn.svg" /></button>
+      <button class="go-back-btn"><img 
+      class="go-back-arrow-img" src = "/src/images/go-back-arrow.svg"/></button>
     </div>
     </div>`;
   }
