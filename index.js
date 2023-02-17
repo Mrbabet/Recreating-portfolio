@@ -2,6 +2,8 @@ import "./scss/styles.scss";
 import showreal from "./src/images/Showreal.svg";
 import MouseFollower from "mouse-follower";
 import gsap from "gsap";
+import PageHeader from "./components/Header";
+import PageFooter from "./components/Footer";
 
 MouseFollower.registerGSAP(gsap);
 
