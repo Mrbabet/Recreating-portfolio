@@ -2,6 +2,11 @@
   .nav-left-side {
     display: flex;
     flex-direction: column;
+    .breadcrumb-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     @media screen and (min-width: 820px) {
       flex-direction: row;
       gap: 26px;

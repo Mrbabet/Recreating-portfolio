@@ -14,12 +14,6 @@ let { host, hostname, href, origin, pathname, port, protocol, search } =
   window.location;
 
 // ----------------------------------------------------------------------------------------
-
-let breadcrumbs = {
-  info: "Info",
-  portfolio: "Portfolio",
-  realizacja: "Portfolio",
-};
 const breadcrumbArrowImg = document.querySelector(".arrow-img");
 const logo = document.querySelector(".name");
 const breadcrumb = document.querySelector(".breadcrumbs");
@@ -27,33 +21,69 @@ const previousBtn = document.querySelector(".previous-btn");
 const previousArrowImg = document.querySelector(".previous-arrow-img");
 const goBackArrowImg = document.querySelector(".go-back-arrow-img");
 const infoBtn = document.querySelector(".info-btn");
-let goBackBtn = document.querySelector(".go-back-btn");
+const goBackBtn = document.querySelector(".go-back-btn");
 goBackBtn.style.display = "none";
-
+previousBtn.style.display = "none";
 infoBtn.href = "./info.html";
-breadcrumbArrowImg.src = ArrowRight;
+
 previousArrowImg.src = ArrowLeft;
 goBackArrowImg.src = GoBack;
 
 if (window.location.toString().includes(pathname) === true) {
   logo.style.fontWeight = "400";
-  breadcrumb.style.fontWeight = "700";
 }
-if (window.location.toString().includes("info")) {
-  breadcrumb.innerHTML = breadcrumbs.info;
-  previousBtn.style.display = "none";
-  infoBtn.style.display = "none";
+
+const firstPage = document.querySelector(".first-page");
+const secondPage = document.querySelector(".second-page");
+const thirdPage = document.querySelector(".third-page");
+const infoPage = document.querySelector(".info-page");
+const breadcrumbArrow = document.querySelectorAll(".breadcrumb-container");
+
+let homePage = true;
+firstPage.style.fontWeight = "700";
+secondPage.style.display = "none";
+thirdPage.style.display = "none";
+infoPage.style.display = "none";
+breadcrumbArrow[0].style.display = "none";
+
+if (!homePage) {
+} else if (window.location.toString().includes("info")) {
+  breadcrumbArrow[0].style.display = "flex";
+  breadcrumbArrow[3].style.display = "none";
+  firstPage.style.fontWeight = "400";
+  firstPage.style.fontFamily = "Lora";
+  secondPage.style.display = "none";
+  thirdPage.style.display = "none";
+  infoPage.style.display = "flex";
+  infoPage.style.fontWeight = "700";
+  infoPage.style.fontFamily = "Lora";
   goBackBtn.style.width = 42 + "px";
   goBackBtn.style.display = "flex";
   goBackBtn.addEventListener("click", function () {
     window.history.back();
   });
 } else if (window.location.toString().includes("portfolio")) {
-  breadcrumb.innerHTML = breadcrumbs.portfolio;
+  breadcrumbArrow[0].style.display = "flex";
+  breadcrumbArrow[1].style.display = "none";
+  firstPage.style.fontWeight = "400";
+  firstPage.style.fontFamily = "DM Sans";
+  secondPage.style.display = "flex";
+  secondPage.style.fontWeight = "700";
+  secondPage.style.fontFamily = "Lora";
+  thirdPage.style.display = "none";
+  infoPage.style.display = "none";
+  goBackBtn.style.display = "none";
   previousBtn.style.display = "none";
 } else if (window.location.toString().includes("realizacja")) {
-  breadcrumb.innerHTML = breadcrumbs.realizacja;
-  const arrowContainer = document.createElement("span");
-  arrowContainer.innerHTML = `<img src="${ArrowRight}"/>`;
-  breadcrumb.appendChild(arrowContainer);
+  breadcrumbArrow[0].style.display = "flex";
+  breadcrumbArrow[2].style.display = "none";
+  firstPage.style.fontWeight = "400";
+  previousBtn.style.display = "flex";
+  secondPage.style.display = "flex";
+  secondPage.style.fontFamily = "DM Sans";
+  thirdPage.style.display = "flex";
+  thirdPage.style.fontWeight = "700";
+  thirdPage.style.fontFamily = "Lora";
+  infoPage.style.display = "none";
+  goBackBtn.style.display = "none";
 }
