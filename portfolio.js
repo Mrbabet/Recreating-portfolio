@@ -161,4 +161,24 @@ const renderContainers = function (items) {
   });
 };
 
+const scrollBtn = document.querySelector(".scroll-top");
+
+const goBackTop = function () {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+  document.documentElement.style.scrollBehavior = "smooth";
+};
+// Function which shows button when we scroll
+
+const showOnScroll = function () {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+};
+
+window.addEventListener("scroll", showOnScroll);
+scrollBtn.addEventListener("click", goBackTop);
+
 document.onload = renderContainers(newComponents);
