@@ -2,7 +2,7 @@ import "./scss/styles.scss";
 import ArrowRight from "./src/images/breadcrumb-arrow.svg";
 import GoBack from "./src/images/go-back-arrow.svg";
 import ArrowLeft from "./src/images/previous-btn.svg";
-import ArrowOkładka from "./src/images/arrow-okładka.svg";
+import IconOverlay from "./src/images/img-icon.svg";
 import PageHeader from "./components/Header";
 import PageFooter from "./components/Footer";
 import ImgGray from "./src/images/gray.svg";
