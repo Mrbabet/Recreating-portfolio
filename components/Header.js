@@ -36,7 +36,7 @@ export default class PageHeader extends HTMLElement {
 customElements.define("page-header", PageHeader);
 
 const dekstopTitle = document.querySelector(".title-desktop");
-
+dekstopTitle.style.display = "none";
 const displayDesktopTitles = function () {
   if (
     window.location.toString().includes("realizacja") &&
