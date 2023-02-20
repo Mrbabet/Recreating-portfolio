@@ -24,21 +24,21 @@
     display: flex;
     gap: 16px;
   }
-}
-.title-desktop {
-  display: none;
-  @media screen and (min-width: 1280px) {
-    display: flex;
-    gap: 24px;
-    .header {
-      font-family: "Lora";
-      font-weight: bold;
+  .title-desktop {
+    display: none;
+    @media screen and (min-width: 1280px) {
+      display: flex;
+      gap: 24px;
+      .header {
+        font-family: "Lora";
+        font-weight: bold;
 
-      font-size: 22px;
-      line-height: 28px;
-    }
-    .description {
-      width: 400px;
+        font-size: 22px;
+        line-height: 28px;
+      }
+      .description {
+        width: 400px;
+      }
     }
   }
 }

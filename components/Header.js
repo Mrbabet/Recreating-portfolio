@@ -34,3 +34,10 @@ export default class PageHeader extends HTMLElement {
   }
 }
 customElements.define("page-header", PageHeader);
+
+const dekstopTitle = document.querySelector(".title-desktop");
+if (window.location.toString().includes("realizacja")) {
+  dekstopTitle.style.display = "flex";
+} else {
+  dekstopTitle.style.display = "none";
+}
