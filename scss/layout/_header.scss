@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     .breadcrumb-container {
       display: flex;
       justify-content: center;
@@ -10,7 +11,7 @@
     }
     @media screen and (min-width: 820px) {
       flex-direction: row;
-      gap: 26px;
+      gap: 24px;
     }
     a {
       display: flex;
@@ -30,7 +31,6 @@
       .header {
         font-family: "Lora";
         font-weight: bold;
-
         font-size: 22px;
         line-height: 28px;
       }
@@ -51,6 +51,8 @@
   .name {
     font-family: "Lora", serif;
     font-weight: 700;
+    line-height: 21px;
+
     a {
       text-decoration: none;
       color: black;
@@ -70,7 +72,7 @@
     justify-content: center;
     align-items: center;
   }
-  .info-btn,
+
   .portfolio-btn,
   .go-back-btn {
     width: 58px;
@@ -85,11 +87,45 @@
     color: black;
   }
 }
+.info-btn {
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 99vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  padding: 12px 16px 12px 17px;
+}
 .breadcrumbs {
   font-family: "Lora", serif;
   font-weight: 700;
   a {
     text-decoration: none;
     color: black;
+  }
+}
+.first-page,
+.second-page,
+.third-page,
+.info-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  line-height: 21px;
+  a {
+    padding-bottom: 1px;
+  }
+  @media screen and (min-width: 820px) {
+    gap: 24px;
+  }
+  span {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

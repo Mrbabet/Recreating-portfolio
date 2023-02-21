@@ -2,160 +2,85 @@ import PageHeader from "./components/Header";
 import PageFooter from "./components/Footer";
 import "./scss/styles.scss";
 
-// const newComponents = [
-//   {
-//     id: 0,
-//     image: OkladkaVideo,
-//     title: "Tytuł",
-//     description: "Opis.",
-//     type: "picture",
-//     link: "realizacja.html",
-//   },
-//   {
-//     id: 1,
-//     image: ImgGray,
-//     title: "Tytuł",
-//     description: "Opis.",
-//     type: "picture",
-//     link: "realizacja.html",
-//   },
-//   {
-//     id: 2,
-//     image: ImgGraySmall,
-//     title: "Tytuł",
-//     description: "Opis.",
-//     type: "portrait",
-//     link: "realizacja.html",
-//     description1:
-//       "Logo jest wizualną <br/>reprezentacją <br/> Ciebie i Twojego <br/>biznesu.",
-//     description2:
-//       "Informator: <br/> <span class='underline'>Dlaczego logo <br/> to ważny element <br/> w budowaniu <br/>marki?</span>",
-//   },
-//   {
-//     id: 3,
-//     image: ImgGray,
-//     title: "Tytuł",
-//     description: "Opis.",
-//     type: "picture",
-//     link: "realizacja.html",
-//   },
-//   {
-//     id: 4,
-//     image: ImgGray,
-//     title: "Tytuł",
-//     description: "Opis.",
-//     type: "picture",
-//     link: "realizacja.html",
-//   },
-//   {
-//     id: 5,
-//     image: ImgGray,
-//     title: "Tytuł",
-//     description: "Opis.",
-//     type: "picture",
-//     link: "realizacja.html",
-//     description1:
-//       "Identyfikacja<br/> wizualna  przyciąga <br/>sprecyzowaną<br/> grupę klientów,<br/> którzy zapłacą<br/> za Twoje produkty.",
-//     description2:
-//       "Informator:<br/><span class='underline'> Dlaczego warto<br/> zainwestować w spójną<br/> identyfikację wizualną<br/> marki?</span>",
-//   },
-//   {
-//     id: 6,
-//     image: ImgGray,
-//     title: "Tytuł",
-//     description: "Opis.",
-//     type: "picture",
-//     link: "realizacja.html",
-//   },
-//   {
-//     id: 7,
-//     image: ImgGraySmall,
-//     title: "Tytuł",
-//     description: "Opis.",
-//     type: "portrait",
-//     link: "realizacja.html",
-//   },
-//   {
-//     id: 8,
-//     image: ImgGray,
-//     title: "Tytuł",
-//     description: "Opis.",
-//     type: "picture",
-//     link: "realizacja.html",
-//     description1:
-//       "Marka dzieląca się<br/> doświadczeniami na mediach społecznościowych zbliża do siebie swoich<br/> klientów.",
-//     description2:
-//       "Informator:<br/> <span class='underline'> Dlaczego social media do jeden z elementów kreacji marki?</span> ",
-//   },
-//   {
-//     id: 9,
-//     image: ImgGray,
-//     title: "Tytuł",
-//     description: "Opis.",
-//     type: "picture",
-//     link: "realizacja.html",
-//   },
-//   {
-//     id: 10,
-//     image: ImgGraySmall,
-//     title: "Tytuł",
-//     description: "Opis.",
-//     type: "portrait",
-//     link: "realizacja.html",
-//   },
-//   {
-//     id: 11,
-//     image: ImgGray,
-//     title: "Tytuł",
-//     description: "Opis.",
-//     type: "picture",
-//     link: "realizacja.html",
-//   },
-// ];
+const portfolioContainer = document.querySelector(".portfolio");
+fetch("./resources.json")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    const resources = data;
+    for (let i = 0; i < resources.length; i++) {
+      const link = resources[i].Link;
+      const title = resources[i].Title;
+      const description = resources[i].Description;
+      const typeOfContent = resources[i].Type;
+      const location = resources[i].Location;
+      function getFileExtension(filename) {
+        return /[.]/.exec(filename) ? /[^.]+$/.exec(filename) : undefined;
+      }
+      const containerExtension = getFileExtension(link);
+      const [arrayValue] = containerExtension;
 
-// const portfolio = document.querySelector(".portfolio");
+      const generateBoxContainer = function () {
+        const boxContainer = document.createElement("a");
+        boxContainer.className = "box-container";
+        boxContainer.setAttribute("data-type", typeOfContent);
+        boxContainer.href = location;
+        portfolioContainer.appendChild(boxContainer);
+      };
+      generateBoxContainer();
 
-// const renderContainers = function (items) {
-//   for (let i = 0; i < items.length; i++) {
-//     //Render img
-//     const renderImg = function (className, appendPlace) {
-//       const createImg = document.createElement("img");
-//       createImg.className = className;
-//       createImg.src = `${items[i].image} `;
-//       appendPlace.prepend(createImg);
-//     };
+      const boxContainer = document.querySelectorAll(".box-container");
 
-//     //Generatimg the div element by the appendChild method
+      const generateDescriptionContainer = function () {
+        const descriptionContainer = document.createElement("div");
+        descriptionContainer.innerHTML = `
+              <div class="description-container">
+                <div class="title">${title}</div>
+                <p class="img-description">${description}</p>
+              </div>`;
+        boxContainer.forEach((element) => {
+          element.appendChild(descriptionContainer);
+        });
+      };
 
-//     const createBoxContainer = document.createElement("a");
-//     createBoxContainer.className = "box-container";
-//     createBoxContainer.href = items[i].link;
-//     createBoxContainer.innerHTML = `<div class ='description-container'><div class="title">${items[i].title}</div>
-//                                     <p class="img-description">${items[i].description}</p></div>`;
-//     createBoxContainer.setAttribute("data-type", items[i].type);
-//     // createBoxContainer.setAttribute("data-img-src", items[i].hover);
-//     portfolio.appendChild(createBoxContainer);
+      if (arrayValue === "webp" || arrayValue === "svg") {
+        const generateImgContainer = function () {
+          const imageContainer = document.createElement("img");
+          imageContainer.src = link;
+          boxContainer.forEach((element) => {
+            element.appendChild(imageContainer);
+          });
+        };
+        generateImgContainer();
+      } else {
+        const generateVideoContainer = function () {
+          const videoContainer = document.createElement("video");
+          videoContainer.className = "video-container";
+          videoContainer.autoplay = true;
+          videoContainer.muted = true;
+          videoContainer.loop = true;
+          const videoSource = document.createElement("source");
+          videoSource.src = link;
+          boxContainer.forEach((element) => {
+            element.appendChild(videoContainer);
+          });
 
-//     //Using the rengerImg function to prepend the img container above appended div container
-//     renderImg("box-container-img", createBoxContainer);
+          videoContainer.appendChild(videoSource);
+        };
+        generateVideoContainer();
+      }
+      generateDescriptionContainer();
+    }
+  });
 
-//     renderImg("box-container-img-icon");
-//     const id = newComponents.map((x) => x.id + 1);
-
-//     if (id[i] > 0 && id[i] % 3 === 0 && id[i] % id.length !== 0) {
-//       const createNewDiv = document.createElement("div");
-//       createNewDiv.className = "information";
-//       createNewDiv.innerHTML = `<div class="description-1">${items[i].description1}</div>
-//                                 <div class="description-2">${items[i].description2}</div>
-//                                 <div class="arrow"><svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-//                                 <path d="M6.07107 -2.2769e-05L5.46808 0.602968L11.51 6.64493L-0.0010454 6.64493L-4.0432e-05 7.49816L11.509 7.49816L5.46808 13.5391L6.07107 14.1421L13.1421 7.07104L6.07107 -2.2769e-05Z" fill="#B4AFA6"/>
-//                                 </svg>
-//                                 </div>`;
-//       portfolio.appendChild(createNewDiv);
-//     }
-//   }
-
-// };
+// <video class="box-container-img" autoplay muted>
+//         <source src="/src/images/Okładka-1.webm" />
+//       </video>
+//       <div class="description-container">
+//         <div class="title">Tytuł</div>
+//         <p class="img-description">Opis.</p>
+//       </div>
 
 const scrollBtn = document.querySelector(".scroll-top");
 
@@ -176,5 +101,3 @@ const showOnScroll = function () {
 
 window.addEventListener("scroll", showOnScroll);
 scrollBtn.addEventListener("click", goBackTop);
-
-// document.onload = renderContainers(newComponents);

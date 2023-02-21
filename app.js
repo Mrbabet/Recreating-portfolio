@@ -49,9 +49,8 @@ breadcrumbArrow[0].style.display = "none";
 if (!homePage) {
 } else if (window.location.toString().includes("info")) {
   breadcrumbArrow[0].style.display = "flex";
-  breadcrumbArrow[3].style.display = "none";
   firstPage.style.fontWeight = "400";
-  firstPage.style.fontFamily = "Lora";
+  firstPage.style.fontFamily = "DM Sans";
   secondPage.style.display = "none";
   thirdPage.style.display = "none";
   infoPage.style.display = "flex";
@@ -62,6 +61,7 @@ if (!homePage) {
   goBackBtn.addEventListener("click", function () {
     window.history.back();
   });
+  infoBtn.style.display = "none";
 } else if (window.location.toString().includes("portfolio")) {
   breadcrumbArrow[0].style.display = "flex";
   breadcrumbArrow[1].style.display = "none";

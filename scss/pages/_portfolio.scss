@@ -19,7 +19,7 @@
   color: black;
 }
 
-.box-container[data-type="picture"] {
+.box-container[data-type="Picture"] {
   grid-column: span 4;
   img {
     width: 100%;
@@ -31,7 +31,7 @@
     grid-column: span 4;
   }
 }
-.box-container[data-type="portrait"] {
+.box-container[data-type="Portrait"] {
   grid-column: span 3;
   img {
     width: 100%;
@@ -201,6 +201,9 @@
     transform: translate(-50%, -50%);
   }
 }
-.box-container-img {
-  width: 100%;
+.box-container {
+  .video-container,
+  img {
+    width: 100%;
+  }
 }

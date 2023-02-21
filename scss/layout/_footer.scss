@@ -15,13 +15,18 @@
   display: flex;
   justify-content: center;
 }
-.portfolio-link {
-  background-color: black;
-  border: 1px solid white;
-  padding: 8px 16px;
-  border-radius: 99vh;
-  text-decoration: none;
-  z-index: 100;
-  text-decoration: mone;
-  color: white;
+
+.email-mobile {
+  display: flex;
+  width: 10px;
+  flex-basis: 10%;
+  @media screen and (min-width: 820px) {
+    display: none;
+  }
+}
+.email {
+  display: none;
+  @media screen and (min-width: 820px) {
+    display: flex;
+  }
 }
