@@ -1,4 +1,4 @@
-import"./app-330cd0c1.js";const Vr="/assets/Showreal-abd088e8.svg";/*!
+import"./app-f73ac0f2.js";const Vr="/assets/Showreal-abd088e8.svg";/*!
  * Cuberto Mouse Follower
  * https://cuberto.com/
  *
