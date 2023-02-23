@@ -1,10 +1,12 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
+import mpa from "vite-plugin-mpa";
 
 const root = resolve(__dirname, "");
 const outDir = resolve(__dirname, "dist");
 
 export default defineConfig({
+  plugins: [],
   root,
   build: {
     outDir,

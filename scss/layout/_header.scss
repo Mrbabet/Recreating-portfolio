@@ -85,6 +85,7 @@
     align-items: center;
     text-decoration: none;
     color: black;
+    cursor: pointer;
   }
 }
 .info-btn {
@@ -96,7 +97,8 @@
   align-items: center;
   text-decoration: none;
   color: black;
-  padding: 12px 16px 12px 17px;
+  width: 58px;
+  height: 48px;
 }
 .breadcrumbs {
   font-family: "Lora", serif;

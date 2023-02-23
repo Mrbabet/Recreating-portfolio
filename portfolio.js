@@ -2,6 +2,9 @@ import PageHeader from "./components/Header";
 import PageFooter from "./components/Footer";
 import "./scss/styles.scss";
 import { data } from "./data";
+import { Breadcrumb } from "./breadcrumb";
+
+const breadcrumb = new Breadcrumb();
 const portfolioContainer = document.querySelector(".portfolio");
 
 for (let i = 0; i < data.length; i++) {
