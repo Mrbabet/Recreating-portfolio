@@ -33,8 +33,6 @@ export function Breadcrumb() {
   const infoPage = document.querySelector(".info-page");
   const breadcrumbArrow = document.querySelectorAll(".breadcrumb-container");
 
-  console.log(breadcrumbArrow);
-
   let homePage = true;
   firstPage.style.fontWeight = "700";
   secondPage.style.display = "none";

@@ -1,24 +1,46 @@
+@use "../base/typography" as t;
+
 .navigation-top {
+  padding-top: 16px;
+  padding-inline: 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+
+  .name {
+    a {
+      line-height: t.$logo-lora-lh;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
+  }
+  .right-side {
+    display: flex;
+    gap: 16px;
+  }
   .nav-left-side {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
     .breadcrumb-container {
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    @media screen and (min-width: 820px) {
-      flex-direction: row;
-      gap: 24px;
-    }
+
     a {
       display: flex;
       gap: 14px;
       align-items: center;
       text-decoration: none;
       color: black;
+    }
+
+    @media screen and (min-width: 820px) {
+      flex-direction: row;
+      gap: 24px;
     }
   }
   .nav-right-side {
@@ -29,10 +51,10 @@
     @media screen and (min-width: 1280px) {
       gap: 24px;
       .header {
-        font-family: "Lora";
-        font-weight: bold;
-        font-size: 22px;
-        line-height: 28px;
+        font-family: t.$ff-Lora;
+        font-weight: t.$body-xl-lora-fw;
+        font-size: t.$body-xl-lora-fs;
+        line-height: t.$body-xl-lora-lh;
       }
       .description {
         width: 400px;
@@ -41,53 +63,31 @@
   }
 }
 
-.navigation-top {
-  padding-top: 16px;
-  padding-inline: 16px;
+.previous-btn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid black;
+  border-radius: 50%;
   display: flex;
-  justify-content: space-between;
-  font-size: 15px;
-
-  .name {
-    font-family: "Lora", serif;
-    font-weight: 700;
-    line-height: 21px;
-
-    a {
-      text-decoration: none;
-      color: black;
-      cursor: pointer;
-    }
-  }
-  .right-side {
-    display: flex;
-    gap: 16px;
-  }
-  .previous-btn {
-    width: 42px;
-    height: 42px;
-    border: 1px solid black;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .portfolio-btn,
-  .go-back-btn {
-    width: 58px;
-    height: 42px;
-    background-color: transparent;
-    border: 1px solid black;
-    border-radius: 99vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-  }
+  justify-content: center;
+  align-items: center;
 }
+
+.portfolio-btn,
+.go-back-btn {
+  width: 58px;
+  height: 42px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 99vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
 .info-btn {
   background-color: transparent;
   border: 1px solid black;
@@ -100,14 +100,7 @@
   width: 58px;
   height: 48px;
 }
-.breadcrumbs {
-  font-family: "Lora", serif;
-  font-weight: 700;
-  a {
-    text-decoration: none;
-    color: black;
-  }
-}
+
 .first-page,
 .second-page,
 .third-page,

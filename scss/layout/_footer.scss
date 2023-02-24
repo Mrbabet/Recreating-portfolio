@@ -1,11 +1,12 @@
+@use "../base/typography" as t;
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-inline: 20px;
   padding-bottom: 20px;
-  font-size: 15px;
-  font-family: "DM Sans";
+  font-size: t.$body-m-fs;
+  font-family: t.$ff-DMSans;
   a {
     text-decoration: none;
     color: black;

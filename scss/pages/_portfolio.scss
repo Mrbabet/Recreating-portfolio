@@ -1,3 +1,4 @@
+@use "../base/typography" as t;
 .portfolio {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -17,6 +18,10 @@
 .box-container {
   text-decoration: none;
   color: black;
+  .video-container,
+  img {
+    width: 100%;
+  }
 }
 
 .box-container[data-type="Picture"] {
@@ -192,18 +197,11 @@
   height: 42px;
   position: relative;
   cursor: pointer;
-
   margin-bottom: 52px;
   img {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-}
-.box-container {
-  .video-container,
-  img {
-    width: 100%;
   }
 }

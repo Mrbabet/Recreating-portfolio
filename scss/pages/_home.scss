@@ -1,3 +1,4 @@
+@use "../base/typography" as t;
 body {
   background-color: #d8d3cf;
   min-height: 100vh;
@@ -6,12 +7,12 @@ body {
   flex-direction: column;
 }
 .home-page {
-  font-family: "DM Sans", sans-serif;
+  font-family: t.$ff-DMSans;
+  font-size: t.$body-m-fs;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 15px;
 }
 main {
   .showreal-img {
