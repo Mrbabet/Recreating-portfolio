@@ -49,7 +49,7 @@ export default class PageHeader extends HTMLElement {
       </div>
 
       <div class="third-page"><a href ="/realizacja.html">Realizacja</a></div>
-      <div class="info-page"> <a href="/info.html">Info</a></div>
+      <div class="info-page"> <a href="info/">Info</a></div>
      
       
       <div class="title-desktop">

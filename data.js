@@ -15,7 +15,6 @@ export const data = [
     Title: "Tytuł",
     Description: "Opis.",
     Type: "Picture",
-    Location: "/realizacja2.html",
   },
   {
     Link: ImgGraySmall,
