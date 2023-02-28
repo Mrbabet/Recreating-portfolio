@@ -18,7 +18,7 @@ export function Breadcrumb() {
   const goBackBtn = document.querySelector(".go-back-btn");
   goBackBtn.style.display = "none";
   previousBtn.style.display = "none";
-  infoBtn.href = "./info.html";
+  infoBtn.href = "/info";
 
   previousArrowImg.src = ArrowLeft;
   goBackArrowImg.src = GoBack;
