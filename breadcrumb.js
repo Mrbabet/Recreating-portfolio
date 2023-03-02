@@ -18,7 +18,7 @@ export function Breadcrumb() {
   const goBackBtn = document.querySelector(".go-back-btn");
   goBackBtn.style.display = "none";
   previousBtn.style.display = "none";
-  infoBtn.href = "/info";
+  infoBtn.href = "/info/";
 
   previousArrowImg.src = ArrowLeft;
   goBackArrowImg.src = GoBack;
@@ -56,7 +56,10 @@ export function Breadcrumb() {
       window.history.back();
     });
     infoBtn.style.display = "none";
-  } else if (window.location.toString().includes("portfolio")) {
+  } else if (
+    window.location.toString().includes("portfolio") &&
+    !window.location.toString().includes("realizacja")
+  ) {
     breadcrumbArrow[0].style.display = "flex";
     breadcrumbArrow[1].style.display = "none";
     firstPage.style.fontWeight = "400";
@@ -68,7 +71,10 @@ export function Breadcrumb() {
     infoPage.style.display = "none";
     goBackBtn.style.display = "none";
     previousBtn.style.display = "none";
-  } else if (window.location.toString().includes("realizacja")) {
+  } else if (
+    window.location.toString().includes("realizacja") &&
+    window.location.toString().includes("portfolio")
+  ) {
     breadcrumbArrow[0].style.display = "flex";
     firstPage.style.fontWeight = "400";
     previousBtn.style.display = "flex";
@@ -81,3 +87,4 @@ export function Breadcrumb() {
     goBackBtn.style.display = "none";
   }
 }
+console.log(window.location.toString().includes("realizacja"));

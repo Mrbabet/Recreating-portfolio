@@ -8,7 +8,7 @@ export const data = [
     Title: "Tytuł",
     Description: "Opis.",
     Type: "Picture",
-    Location: "/realizacja.html",
+    Location: "/portfolio/realizacja/",
   },
   {
     Link: ImgGray,
