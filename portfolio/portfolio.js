@@ -42,7 +42,7 @@ for (let i = 0; i < data.length; i++) {
     });
   };
 
-  if (arrayValue === "webp" || arrayValue === "svg") {
+  if (arrayValue === "webp" || arrayValue === "png") {
     const generateImgContainer = function () {
       const imageContainer = document.createElement("img");
       imageContainer.src = link;
