@@ -1,8 +1,6 @@
 import ArrowRight from "./src/images/breadcrumb-arrow.svg";
 import GoBack from "./src/images/go-back-arrow.svg";
 import ArrowLeft from "./src/images/previous-btn.svg";
-import ImgGray from "./src/images/gray.svg";
-import ImgGraySmall from "./src/images/gray-small.svg";
 
 export function Breadcrumb() {
   let { host, hostname, href, origin, pathname, port, protocol, search } =
